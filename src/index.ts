@@ -12,7 +12,7 @@ client.on("ready", () => {
 });
 
 client.on("messageCreate", async (message) => {
-  if (message.content.includes("1052649070587551824/Honeycam_.gif")) {
+  if (message.content.includes("1052649070587551824/Honeycam_.gif") || message.content.includes("Cockrubbing_.gif")) {
     await Promise.all([
       message.delete(),
       message.channel.send(
