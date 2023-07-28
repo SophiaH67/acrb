@@ -12,7 +12,6 @@ client.on("ready", () => {
 });
 
 client.on("messageCreate", async (message) => {
-  console.log(message.content);
   if (message.content.includes("1052649070587551824/Honeycam_.gif")) {
     await Promise.all([
       message.delete(),
