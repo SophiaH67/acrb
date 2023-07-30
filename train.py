@@ -34,6 +34,7 @@ data_augmentation = keras.Sequential(
     ]
 )
 
+
 model = keras.Sequential(
     [
         layers.Rescaling(1.0 / 255, input_shape=(256, 256, 3)),
@@ -58,7 +59,7 @@ model.compile(
 
 model.summary()
 
-epochs = 10
+epochs = 4
 history = model.fit(train_ds, validation_data=val_ds, epochs=epochs)
 
 model.save("model.keras")

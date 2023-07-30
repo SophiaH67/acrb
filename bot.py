@@ -7,6 +7,7 @@ from sh import convert, ffmpeg
 from tensorflow.keras.models import load_model
 import tensorflow as tf
 import numpy as np
+import asyncio
 
 model = load_model("./model.keras", compile=True)
 

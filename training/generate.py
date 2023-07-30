@@ -1,11 +1,6 @@
 # Remove all .png files in the training folder
 # and generate new ones from random tenor gifs
 from os import listdir, remove
-from glob import glob
-
-for f in glob("*.png"):
-    remove(f)
-
 from gifpy import Gifpy
 from os import getenv
 
@@ -16,7 +11,11 @@ if not tenor_token:
 gifpy = Gifpy(tenor_token, "en_US")
 
 bad_gifs = [
-    "https://media.discordapp.net/attachments/977197179477327903/1052649070587551824/Honeycam_.gif"
+    "https://media.discordapp.net/attachments/977197179477327903/1052649070587551824/Honeycam_.gif",
+    "https://cdn.discordapp.com/attachments/1130985436228108331/1135273142705733783/20230730_191000.gif",
+    "https://cdn.discordapp.com/attachments/1130985436228108331/1135273560265470042/20230730_191137.gif",
+    "https://cdn.discordapp.com/attachments/1130985436228108331/1135272433729933402/ufyfyyfdhe.gif",
+    "https://cdn.discordapp.com/attachments/976210920911028264/1135275848077942784/image.png"
 ]
 other_gifs = []
 
@@ -49,10 +48,10 @@ for gif in bad_gifs:
 
 # Extract frames from gifs to training folder, with prefix
 from sh import convert
-from os import mkdir
+from pathlib import Path
 
-mkdir("other")
-mkdir("bad")
+Path("other").mkdir(exist_ok=True)
+Path("bad").mkdir(exist_ok=True)
 
 for gif in listdir(other_temp_dir.name):
     convert(
