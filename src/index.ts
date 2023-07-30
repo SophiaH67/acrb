@@ -15,7 +15,12 @@ client.on('ready', () => {
 });
 
 client.on('messageCreate', async (message) => {
-  const images = await getImagesFromMessage(message);
+  const images = await getImagesFromMessage(message).catch((e) => {
+    console.error('Error getting images from message', e);
+    return null;
+  });
+
+  if (!images) return;
 
   if (images.some(isImagePartOfThatGif)) {
     await Promise.all([
