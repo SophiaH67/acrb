@@ -1,0 +1,5 @@
+tensorflow
+gifpy
+sh
+discord.py
+pillow
