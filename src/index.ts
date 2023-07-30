@@ -1,4 +1,7 @@
-import { Client, GatewayIntentBits } from "discord.js";
+import { Client, GatewayIntentBits } from 'discord.js';
+import { getImagesFromMessage } from './extractor';
+import { isImagePartOfThatGif } from './comparer';
+
 const client = new Client({
   intents: [
     GatewayIntentBits.MessageContent,
@@ -7,19 +10,21 @@ const client = new Client({
   ],
 });
 
-client.on("ready", () => {
+client.on('ready', () => {
   console.log(`Logged in as ${client.user?.tag}!`);
 });
 
-client.on("messageCreate", async (message) => {
-  if (message.content.includes("Honeycam_.gif") || message.content.includes("Cockrubbing_.gif")) {
+client.on('messageCreate', async (message) => {
+  const images = await getImagesFromMessage(message);
+
+  if (images.some(isImagePartOfThatGif)) {
     await Promise.all([
       message.delete(),
       message.channel.send(
-        `${message.author.username} posted the cock rubbing gif!`
+        `${message.author.username} posted the cock rubbing gif!`,
       ),
     ]).catch((e) => {
-      console.error("Nya :(", e);
+      console.error('Nya :(', e);
     });
   }
 });
