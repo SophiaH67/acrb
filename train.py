@@ -59,7 +59,7 @@ model.compile(
 
 model.summary()
 
-epochs = 4
+epochs = 10
 history = model.fit(train_ds, validation_data=val_ds, epochs=epochs)
 
 model.save("model.keras")

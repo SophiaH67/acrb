@@ -15,12 +15,18 @@ bad_gifs = [
     "https://cdn.discordapp.com/attachments/1130985436228108331/1135273142705733783/20230730_191000.gif",
     "https://cdn.discordapp.com/attachments/1130985436228108331/1135273560265470042/20230730_191137.gif",
     "https://cdn.discordapp.com/attachments/1130985436228108331/1135272433729933402/ufyfyyfdhe.gif",
-    "https://cdn.discordapp.com/attachments/976210920911028264/1135275848077942784/image.png"
+    # "https://cdn.discordapp.com/attachments/976210920911028264/1135275848077942784/image.png",
+    "https://cdn.discordapp.com/attachments/1130985436228108331/1135331963725684766/20230730_191137.gif",
+    "https://cdn.discordapp.com/attachments/1130985436228108331/1135288701774204969/invert.gif",
 ]
-other_gifs = []
+other_gifs = [
+    "https://cdn.discordapp.com/attachments/1133898968665952337/1135306676736634910/VRChat_1920x1080_2021-03-13_00-26-51.314.png",
+    "https://cdn.discordapp.com/attachments/1133898968665952337/1135306697024491520/VRChat_2023-07-30_22-17-54.369_7680x4320.png",
+    "https://cdn.discordapp.com/attachments/1133898968665952337/1135308114246242344/VRChat_2023-07-30_22-26-33.150_4320x7680.jpg",
+]
 
 
-def get_gifs(query, limit=5):
+def get_gifs(query, limit=20):
     gifs = gifpy.search(query, limit=limit)
     for gif in gifs:
         other_gifs.append(gif.media.get_format("gif").url)

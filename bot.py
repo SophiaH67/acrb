@@ -119,6 +119,15 @@ async def on_message(message):
         pt.marker(f"Predicted {frame}")
 
         if prediction == "bad":
+            if confidence < 80:
+                await message.channel.send(
+                    f"{message.author.mention} is involved with a potential cock rubbing. Confidence: {confidence:.2f}%."
+                )
+                pt.end(
+                    "Bad prediction, but medium confidence: {:.2f}%".format(confidence)
+                )
+                return
+
             try:
                 await message.delete()
             except discord.errors.NotFound:
