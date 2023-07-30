@@ -317,6 +317,11 @@ mkdirp-classic@^0.5.2, mkdirp-classic@^0.5.3:
   resolved "https://registry.yarnpkg.com/mkdirp-classic/-/mkdirp-classic-0.5.3.tgz#fa10c9115cc6d8865be221ba47ee9bed78601113"
   integrity sha512-gKLcREMhtuZRwRAfqP3RFW+TK4JqApVBtOIftVgjuABpAtpxhPGaDcfvbhNvD0B8iD1oUr/txX35NjcaY6Ns/A==
 
+mktemp@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/mktemp/-/mktemp-1.0.1.tgz#68ac6a3ce68ed9a252ff524aee41f8e0b33c3d32"
+  integrity sha512-vA7kCOfGjULK//q9eswajQgOUh12SqTWvwofRswNHMPoeM2rBZVtlIM1c8I08ZVqEhaDajPYd0hg8W00/tEoQw==
+
 napi-build-utils@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/napi-build-utils/-/napi-build-utils-1.0.2.tgz#b1fddc0b2c46e380a0b7a76f984dd47c41a13806"

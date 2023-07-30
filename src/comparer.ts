@@ -33,8 +33,6 @@ export function isImagePartOfThatGif(image: PNG) {
     if (diff / pixelsInThatImage < 0.1) {
       return true;
     }
-
-    return false;
   }
 
   return false;
