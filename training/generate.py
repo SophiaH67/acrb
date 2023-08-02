@@ -23,6 +23,8 @@ other_gifs = [
     "https://cdn.discordapp.com/attachments/1133898968665952337/1135306676736634910/VRChat_1920x1080_2021-03-13_00-26-51.314.png",
     "https://cdn.discordapp.com/attachments/1133898968665952337/1135306697024491520/VRChat_2023-07-30_22-17-54.369_7680x4320.png",
     "https://cdn.discordapp.com/attachments/1133898968665952337/1135308114246242344/VRChat_2023-07-30_22-26-33.150_4320x7680.jpg",
+    "https://pbs.twimg.com/media/F19bEmaaEAE1jpE.jpg",
+    "https://cdn.discordapp.com/attachments/868218434180223017/1135993103535317032/8HUOCgppMf6OAAAAAASUVORK5CYII.png",
 ]
 
 
@@ -35,6 +37,8 @@ def get_gifs(query, limit=20):
 get_gifs("anime")
 get_gifs("vrchat")
 get_gifs("speech bubble")
+get_gifs("vrchat sleep")
+get_gifs("vrchat rest")
 
 # Download gifs to temp folder
 import tempfile
